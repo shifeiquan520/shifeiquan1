@@ -8,7 +8,8 @@
       "api": "https://suoniapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "影视 | 率率[直连]",
@@ -17,7 +18,8 @@
       "api": "https://suoniapi.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "光速┃采十",
@@ -26,7 +28,8 @@
       "api": "https://api.guangsuapi.com/api.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "金鹰┃采一",
@@ -35,7 +38,8 @@
       "api": "https://jyzyapi.com/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "影视 | 极速[直连]",
@@ -44,7 +48,8 @@
       "api": "https://jszyapi.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "影视 | 尤酷[直连]",
@@ -53,7 +58,8 @@
       "api": "https://api.ukuapi.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "豪华┃采三",
@@ -62,7 +68,8 @@
       "api": "https://hhzyapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "新浪┃采八",
@@ -71,7 +78,8 @@
       "api": "http://api.xinlangapi.com/xinlangapi.php/provide/vod/",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     },
     {
       "key": "三六┃采九",
@@ -80,7 +88,8 @@
       "api": "https://360zy.com/api.php/provide/vod?",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 0
+      "filterable": 1,
+      "changeable": 1
     }
   ],
   "lives": [],

@@ -304,7 +304,7 @@ def main():
             "key": clean_name,
             "name": f"[{speed}KB/s|{ttfb}ms|{stable}] {clean_name}",
             "type": stype, "api": api,
-            "searchable": 1, "quickSearch": 1, "filterable": 0
+            "searchable": 1, "quickSearch": 1, "filterable": 1, "changeable": 1
         })
 
     collect_json = {"spider": "", "sites": collect_sites, "lives": [], "parses": []}
