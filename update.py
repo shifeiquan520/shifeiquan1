@@ -3,8 +3,8 @@
 TVBox 聚合源自动更新
 每小时 GitHub Actions 自动执行：
   1. tvbox.json       → 简洁版（采集站，播放测速排序）
-  2. tvbox_full.json  → 全量版（399站合并，带spider）
-  3. tvbox_multi.json → 多仓版（27个独立仓库）
+  2. tvbox_full.json  → 全量版（全部合并，带spider）
+  3. tvbox_multi.json → 多仓版（独立仓库）
 """
 import json, sys, re, subprocess, os, time
 import urllib.parse
@@ -13,6 +13,12 @@ from urllib.parse import urljoin, urlparse
 WORK_DIR = os.path.dirname(os.path.abspath(__file__))
 CF_PROXY = os.environ.get("CF_PROXY", "")  # Cloudflare Worker 代理地址
 
+# 置顶的采集站域名（排在最前）
+PINNED_APIS = ["suoniapi.com", "360zy.com"]
+
+# 简洁版最大输出数
+SIMPLE_LIMIT = 10
+
 def curl(url, timeout=10, via_proxy=False):
     actual_url = f"{CF_PROXY}?u={urllib.parse.quote(url, safe='')}" if (via_proxy and CF_PROXY) else url
     try:
@@ -20,16 +26,16 @@ def curl(url, timeout=10, via_proxy=False):
                            "--max-time",str(timeout*2),"-A","Mozilla/5.0",actual_url],
                           capture_output=True, timeout=timeout*2+5)
         return r.stdout.decode("utf-8", errors="replace")
-    except: return ""
+    except Exception: return ""
 
 def parse_json(raw):
-    raw = raw.lstrip('﻿'); raw = re.sub(r',(\s*[}\]])', r'\1', raw)
+    raw = raw.lstrip('\ufeff'); raw = re.sub(r',(\s*[}\]])', r'\1', raw)
     try: return json.loads(raw, strict=False)
-    except:
+    except Exception:
         s,e = raw.find('{'), raw.rfind('}')
         if s>=0 and e>s:
             try: return json.loads(raw[s:e+1], strict=False)
-            except: pass
+            except Exception: pass
     return None
 
 def resolve_spider(spider, source_url):
@@ -75,7 +81,7 @@ def test_play_speed(api, stype, use_proxy=False):
         try:
             j = json.loads(body, strict=False)
             vids = [str(v["vod_id"]) for v in (j.get("list") or [])[:3]]
-        except: return 0, 0, "解析失败"
+        except Exception: return 0, 0, "解析失败"
     if not vids: return 0, 0, "无ID"
 
     for vid in vids:
@@ -89,7 +95,7 @@ def test_play_speed(api, stype, use_proxy=False):
                 dj = json.loads(detail, strict=False)
                 for v in (dj.get("list") or []):
                     m3u8s.extend(extract_m3u8(v.get("vod_play_url", "")))
-            except: continue
+            except Exception: continue
         if not m3u8s: continue
 
         for play in m3u8s[:2]:  # 每个视频最多试2个m3u8源
@@ -99,9 +105,10 @@ def test_play_speed(api, stype, use_proxy=False):
             if not master: continue
             media_url = None
             if "#EXT-X-STREAM-INF" in master:
-                for i, line in enumerate(master.strip().split("\n")):
-                    if "STREAM-INF" in line:
-                        sub = master.strip().split("\n")[i+1].strip() if i+1 < len(master.strip().split("\n")) else ""
+                lines = master.strip().split("\n")
+                for i, line in enumerate(lines):
+                    if "STREAM-INF" in line and i+1 < len(lines):
+                        sub = lines[i+1].strip()
                         if sub and not sub.startswith("#"):
                             media_url = resolve_url(play, sub); break
             elif "#EXTINF" in master: media_url = play
@@ -114,21 +121,21 @@ def test_play_speed(api, stype, use_proxy=False):
             if not segs: continue
 
             # 下载分片，跳过404，至少成功2个才算通过
-            tb, tt, ok = 0, 0, 0
+            total_bytes, total_time, success_count = 0, 0, 0
             for s in segs[:8]:
-                if ok >= 3: break  # 够了
+                if success_count >= 3: break
                 seg_url = f"{CF_PROXY}?u={urllib.parse.quote(s, safe='')}" if (use_proxy and CF_PROXY) else s
                 r = subprocess.run(["curl", "-s", "-o", "/dev/null",
                                    "-w", "%{http_code},%{size_download},%{time_total}",
                                    "--connect-timeout", "8", "--max-time", "20", seg_url],
                                   capture_output=True, timeout=25)
                 parts = r.stdout.decode().strip().split(",")
-                code = parts[0] if parts else "000"
+                code = parts[0] if len(parts) > 0 and parts[0] else "000"
                 sz = int(float(parts[1])) if len(parts) > 1 and parts[1] else 0
                 dl = float(parts[2]) if len(parts) > 2 and parts[2] else 99
-                if code.startswith("2") and sz > 1000: tb += sz; tt += dl; ok += 1
-            if ok >= 2:
-                speed = int((tb / 1024) / tt) if tt > 0 else 0
+                if code.startswith("2") and sz > 1000: total_bytes += sz; total_time += dl; success_count += 1
+            if success_count >= 2:
+                speed = int((total_bytes / 1024) / total_time) if total_time > 0 else 0
                 return ttfb + mms, speed, "OK"
     return 0, 0, "全部失败"
 
@@ -156,7 +163,7 @@ def main():
                               capture_output=True, timeout=15)
             code = r.stdout.decode().strip()
             lat = int((time.time() - t0) * 1000) if code.startswith(("2", "3")) else 99999
-        except: lat = 99999
+        except Exception: lat = 99999
         if lat < 99999: available.append((name, url, lat))
         sys.stdout.write(f"\r  测速: {len(available)}/{len(sources)}"); sys.stdout.flush()
     print()
@@ -167,8 +174,7 @@ def main():
     all_sites, all_lives, all_parses = [], [], []
     site_keys, live_keys, parse_keys = set(), set(), set()
     spider_jars = {}
-    # 记录每个采集站来自哪个源
-    collect_sources = {}  # api -> (source_name, stype)
+    collect_sources = {}
 
     for name, url, lat in available:
         sys.stdout.write(f"\r  合并: {name} ({lat}ms)"); sys.stdout.flush()
@@ -187,7 +193,6 @@ def main():
             s["name"] = f"[{lat}ms|{name}] {s.get('name', key)}"
             s["_lat"] = lat
             all_sites.append(s)
-            # 记录采集站
             st = s.get("type", -1)
             api = s.get("api", "")
             if st in (0, 1) and api.startswith("http") and api not in collect_sources:
@@ -214,11 +219,9 @@ def main():
         sys.stdout.write(f"\r  {len(collect_results)} 可用/{len(collect_sources)} 测试"); sys.stdout.flush()
     print()
 
-    # 按持续速度排序（速度快→慢，同速按首帧快）
     collect_results.sort(key=lambda x: (-x[1], x[0]))
 
     # 置顶指定采集站：索尼第一、360第二
-    PINNED_APIS = ["suoniapi.com", "360zy.com"]
     pinned = [[] for _ in PINNED_APIS]
     rest = []
     for item in collect_results:
@@ -231,7 +234,6 @@ def main():
             rest.append(item)
     collect_results = [x for group in pinned for x in group] + rest
 
-    # 标记采集站的播放速度，用于全量版排序
     speed_map = {api: (ttfb, speed) for ttfb, speed, api, _ in collect_results}
     for s in all_sites:
         api = s.get("api", "")
@@ -239,7 +241,6 @@ def main():
             s["_speed"] = speed_map[api][1]
             s["_speed_ttfb"] = speed_map[api][0]
 
-    # 全量版排序：采集站(type 0/1)排前面按播放速度，爬虫站(type 3)排后面按源延迟
     def full_sort_key(s):
         st = s.get("type", -1)
         if st in (0, 1):
@@ -277,7 +278,6 @@ def main():
     print(f"  全量版: {len(all_sites)} 站点 (采集:{types.get(0,0)+types.get(1,0)} 爬虫:{types.get(3,0)})")
 
     # ── 6. 生成 tvbox_multi.json（多仓版）──
-    # 多仓版置顶：包含索尼/360的仓库排前面
     pinned_repos = set()
     for api_key in collect_sources:
         for kw in PINNED_APIS:
@@ -291,11 +291,9 @@ def main():
         json.dump(multi, f, ensure_ascii=False, indent=2)
     print(f"  多仓版: {len(available)} 个仓库")
 
-    # ── 7. 生成 tvbox.json（简洁版，固定前10个最快采集站）──
-    SIMPLE_LIMIT = 10
+    # ── 7. 生成 tvbox.json（简洁版，固定前N个最快采集站）──
     collect_sites = []
     for ttfb, speed, api, stype in collect_results[:SIMPLE_LIMIT]:
-        # 从全量站点中找名称
         clean_name = api.split("/")[2]
         for s in all_sites:
             if s.get("api") == api:
