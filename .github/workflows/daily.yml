@@ -1,0 +1,30 @@
+name: Daily Source Discovery
+
+on:
+  schedule:
+    - cron: '0 22 * * *'  # UTC 22:00 = 北京时间 06:00
+  workflow_dispatch:       # 允许手动触发
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r source_finder/requirements.txt
+
+      - name: Run source finder
+        run: python source_finder/main.py
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/sources.json
+          git diff --cached --quiet || git commit -m "auto: update sources.json"
+          git push
