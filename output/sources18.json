@@ -1,0 +1,5 @@
+[
+  {"key": "apiyutu.com", "name": "玉兔资源采集接口", "api": "https://apiyutu.com/api.php/provide/vod/"},
+  {"key": "slapibf.com", "name": "森林资源网采集接口", "api": "https://slapibf.com/api.php/provide/vod/"},
+  {"key": "155api.com", "name": "155资源站采集接口", "api": "https://155api.com/api.php/provide/vod/"}
+]
