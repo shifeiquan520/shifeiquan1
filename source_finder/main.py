@@ -19,6 +19,27 @@ from dedup import dedup_sources, to_tvbox_format
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'output')
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'sources.json')
 
+SUFFIXES = [
+    '采集综合资源接口', '采集站采集接口大全', '资源网资源采集接口',
+    'API采集接口大全', '采集网采集接口', '资源采集接口',
+    '采集接口地址', '采集接口',
+]
+
+RENAME_MAP = {
+    'subocj.com': '速播资源',
+    'api.ukuapi88.com': 'uku资源',
+    'www.hongniuzy2.com': '红牛资源',
+}
+
+
+def clean_name(name):
+    for suffix in SUFFIXES:
+        if name.endswith(suffix):
+            cleaned = name[:-len(suffix)]
+            if cleaned:
+                return cleaned
+    return name
+
 
 def main():
     print("=" * 50)
@@ -52,6 +73,12 @@ def main():
 
     # 转换为 TVBox 格式
     tvbox_sources = to_tvbox_format(sources)
+
+    # 清理名称：去掉冗余后缀 + 手动改名
+    for s in tvbox_sources:
+        s['name'] = clean_name(s['name'])
+        if s['key'] in RENAME_MAP:
+            s['name'] = RENAME_MAP[s['key']]
 
     # 输出到文件
     os.makedirs(OUTPUT_DIR, exist_ok=True)
