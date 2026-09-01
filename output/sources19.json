@@ -1,15 +1,7 @@
-
 [
-
-{"key": "大奶子","name": "大奶资源","type": 1,"api": "https://apidanaizi.com/api.php/provide/vod","searchable": 1,"style": {"type": "rect","ratio": 1.33},"changeable": 1},
-{ "key":"*白嫖资源","name":"白嫖资源","type":0,"api":"https://www.kxgav.com/api/xml.php","searchable": 1,"quickSearch": 1,"filterable": 1},
-{"key":"*淫水机资源","name":"*淫水机资源","type":0,"api":"https://www.xrbsp.com/api/xml.php","searchable":1,"quickSearch":1},
-{"key":"*香奶儿资源","name":"*香奶儿资源","type":0,"api":"https://www.gdlsp.com/api/xml.php","searchable":1,"quickSearch":1},
-{"key":"*乐播资源","name":"*乐播资源","type":1,"api":"https://lbapi9.com/api.php/provide/vod/","searchable":1,"quickSearch":1},
-{"key":"*番号资源","name":"*番号资源","type":1,"api":"http://fhapi9.com/api.php/provide/vod/","searchable":1,"quickSearch":1},
-       {"key":"didizy.com","name":"♥滴滴(直连)","type":1,"api":"https://api.ddapi.cc/api.php/provide/vod/?ac=list","searchable":1,"filterable":1},
-{"key":"jkunzy.com","name":"💕jkun(直连)","type":1,"api":"https://jkunzyapi.com/api.php/provide/vod/?ac=list","searchable":1,"filterable":1}
-
-
-
+  {"key": "大奶子", "name": "大奶资源", "type": 1, "api": "https://apidanaizi.com/api.php/provide/vod", "searchable": 1, "style": {"type": "rect", "ratio": 1.33}, "changeable": 1},
+  {"key": "*乐播资源", "name": "*乐播资源", "type": 1, "api": "https://lbapi9.com/api.php/provide/vod/", "searchable": 1, "quickSearch": 1},
+  {"key": "*番号资源", "name": "*番号资源", "type": 1, "api": "http://fhapi9.com/api.php/provide/vod/", "searchable": 1, "quickSearch": 1},
+  {"key": "didizy.com", "name": "♥滴滴(直连)", "type": 1, "api": "https://api.ddapi.cc/api.php/provide/vod/", "searchable": 1, "filterable": 1},
+  {"key": "jkunzy.com", "name": "💕jkun(直连)", "type": 1, "api": "https://jkunzyapi.com/api.php/provide/vod/", "searchable": 1, "filterable": 1}
 ]
