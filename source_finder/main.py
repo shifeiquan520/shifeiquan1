@@ -58,8 +58,40 @@ def main():
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(tvbox_sources, f, ensure_ascii=False, indent=2)
 
-    print(f"\n[DONE] 完成！共 {len(tvbox_sources)} 个可用源")
+    print(f"\n[DONE] sources.json: {len(tvbox_sources)} 个可用源")
     print(f"[FILE] 输出文件: {OUTPUT_FILE}")
+
+    # ---- 生成 sources18.json（成人源自动筛选）----
+    ADULT_CATEGORIES = {
+        '精品推荐', '国产精品', '日本有码', '日本无码', '网曝系列', '自拍偷拍',
+        '三级伦理', '童颜巨乳', '性感人妻', '强奸乱伦', '欧美情色', '丝袜OL',
+        '麻豆传媒', '明星换脸', '国产乱伦', '国产SM', '探花嫖娼', '同性恋',
+        '无码专区', 'AI换脸', '制服诱惑', '欧美系列', '美女主播', '国产自拍',
+        '熟女人妻', '美乳巨乳', '街拍偷拍', '丝袜美腿', '欧美风情', '网友自拍',
+        '露出激情', '欧美无码', 'SM调教', 'AV解说', '国产色情', '亚洲无码',
+        '亚洲有码', '巨乳美乳', '人妻熟女', '91探花', '传媒出品', '网曝门',
+        '同志女同', '同志男同',
+    }
+
+    import requests as _req
+    adult_sources = []
+    for s in tvbox_sources:
+        try:
+            r = _req.get(s['api'], params={'ac': 'list', 'pg': 1}, timeout=8, verify=False)
+            if r.status_code == 200:
+                classes = r.json().get('class', [])
+                src_cats = {c.get('type_name', '') for c in classes}
+                if src_cats & ADULT_CATEGORIES:
+                    adult_sources.append(s)
+                    print(f"  [ADULT] {s['name']} - 匹配 {len(src_cats & ADULT_CATEGORIES)} 个成人分类")
+        except Exception:
+            pass
+
+    adult_file = os.path.join(OUTPUT_DIR, 'sources18.json')
+    with open(adult_file, 'w', encoding='utf-8') as f:
+        json.dump(adult_sources, f, ensure_ascii=False, indent=2)
+
+    print(f"  sources18.json: {len(adult_sources)} 个成人源")
     print(f"{'=' * 50}")
 
     # 打印前 10 个源预览

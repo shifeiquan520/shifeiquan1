@@ -2,7 +2,7 @@ name: Daily Source Discovery
 
 on:
   schedule:
-    - cron: '0 22 * * *'  # UTC 22:00 = 北京时间 06:00
+    - cron: '0 20 * * 6'  # UTC 周六 20:00 = 北京时间 周日 04:00
   workflow_dispatch:       # 允许手动触发
 
 jobs:
@@ -25,6 +25,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add output/sources.json
-          git diff --cached --quiet || git commit -m "auto: update sources.json"
+          git add output/sources.json output/sources18.json
+          git diff --cached --quiet || git commit -m "auto: update sources.json & sources18.json"
           git push
