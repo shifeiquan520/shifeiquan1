@@ -11,18 +11,13 @@ HEADERS = {
 }
 
 TIMEOUT = 10
-CHECK_PATH = "?ac=list&pg=1"
 
 
 def check_source(source):
     """检测单个源是否存活"""
     name = source['name']
-    api_url = source['api_url']
-    check_url = f"{api_url.rstrip('/')}/{CHECK_PATH.lstrip('?')}"
-    if '?' in api_url.split('/')[-1]:
-        check_url = f"{api_url}{CHECK_PATH.lstrip('?')}"
-    else:
-        check_url = f"{api_url}/{CHECK_PATH.lstrip('?')}"
+    api_url = source['api_url'].rstrip('/')
+    check_url = f"{api_url}?ac=list&pg=1"
 
     try:
         start = time.time()
