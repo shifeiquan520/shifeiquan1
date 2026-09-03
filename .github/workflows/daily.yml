@@ -2,7 +2,7 @@ name: Daily Source Discovery
 
 on:
   schedule:
-    - cron: '0 20 * * 6'  # UTC 周六 20:00 = 北京时间 周日 04:00
+    - cron: '0 20 * * *'  # UTC 周六 20:00 = 北京时间 周日 04:00
   workflow_dispatch:       # 允许手动触发
 
 permissions:
