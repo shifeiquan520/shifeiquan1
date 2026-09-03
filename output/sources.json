@@ -45,6 +45,11 @@
     "api": "https://tyyszyapi.com/api.php/provide/vod/"
   },
   {
+    "key": "www.iqiyizyapi.com",
+    "name": "爱奇艺资源站",
+    "api": "https://www.iqiyizyapi.com/api.php/provide/vod/"
+  },
+  {
     "key": "caiji.dyttzyapi.com",
     "name": "电影天堂",
     "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/"
@@ -53,6 +58,11 @@
     "key": "caiji.dbzy5.com",
     "name": "豆瓣资源",
     "api": "https://caiji.dbzy5.com/api.php/provide/vod/"
+  },
+  {
+    "key": "cj.rycjapi.com",
+    "name": "如意资源网",
+    "api": "https://cj.rycjapi.com/api.php/provide/vod/"
   },
   {
     "key": "api.wujinapi.me",
