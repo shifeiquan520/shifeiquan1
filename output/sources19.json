@@ -3,5 +3,9 @@
   {"key": "*乐播资源", "name": "乐播资源", "type": 1, "api": "https://lbapi9.com/api.php/provide/vod/", "searchable": 1, "quickSearch": 1},
   {"key": "*番号资源", "name": "番号资源", "type": 1, "api": "http://fhapi9.com/api.php/provide/vod/", "searchable": 1, "quickSearch": 1},
   {"key": "didizy.com", "name": "滴滴(直连)", "type": 1, "api": "https://api.ddapi.cc/api.php/provide/vod/", "searchable": 1, "filterable": 1},
-  {"key": "jkunzy.com", "name": "jkun(直连)", "type": 1, "api": "https://jkunzyapi.com/api.php/provide/vod/", "searchable": 1, "filterable": 1}
+  {"key": "jkunzy.com", "name": "jkun(直连)", "type": 1, "api": "https://jkunzyapi.com/api.php/provide/vod/", "searchable": 1, "filterable": 1},
+  {"key": "www.msnii.com", "name": "美少女", "type": 0, "api": "https://www.msnii.com/api/xml.php", "searchable": 1, "quickSearch": 1},
+  {"key": "www.gdlsp.com", "name": "香奶儿", "type": 0, "api": "https://www.gdlsp.com/api/xml.php", "searchable": 1, "quickSearch": 1},
+  {"key": "www.kxgav.com", "name": "白嫖", "type": 0, "api": "https://www.kxgav.com/api/xml.php", "searchable": 1, "quickSearch": 1},
+  {"key": "www.xrbsp.com", "name": "淫水机", "type": 0, "api": "https://www.xrbsp.com/api/xml.php", "searchable": 1, "quickSearch": 1}
 ]
