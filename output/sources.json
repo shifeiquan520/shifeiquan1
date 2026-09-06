@@ -75,11 +75,6 @@
     "api": "https://ikunzyapi.com/api.php/provide/vod/"
   },
   {
-    "key": "155api.com",
-    "name": "155资源站",
-    "api": "https://155api.com/api.php/provide/vod/"
-  },
-  {
     "key": "api.ffzyapi.com",
     "name": "非凡资源网",
     "api": "http://api.ffzyapi.com/api.php/provide/vod/"
