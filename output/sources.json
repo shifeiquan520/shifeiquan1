@@ -1,10 +1,5 @@
 [
   {
-    "key": "cdn.dzzyapi.com",
-    "name": "大众",
-    "api": "https://cdn.dzzyapi.com/api.php/provide/vod/"
-  },
-  {
     "key": "caiji.xgzyapi.com",
     "name": "西瓜",
     "api": "https://caiji.xgzyapi.com/api.php/provide/vod/"
@@ -73,6 +68,11 @@
     "key": "ikunzyapi.com",
     "name": "ikun资源网",
     "api": "https://ikunzyapi.com/api.php/provide/vod/"
+  },
+  {
+    "key": "155api.com",
+    "name": "155资源站",
+    "api": "https://155api.com/api.php/provide/vod/"
   },
   {
     "key": "api.ffzyapi.com",
