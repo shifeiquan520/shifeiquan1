@@ -60,9 +60,19 @@
     "api": "https://caiji.dbzy5.com/api.php/provide/vod/"
   },
   {
+    "key": "cj.rycjapi.com",
+    "name": "如意资源网",
+    "api": "https://cj.rycjapi.com/api.php/provide/vod/"
+  },
+  {
     "key": "api.wujinapi.me",
     "name": "无尽资源网",
     "api": "https://api.wujinapi.me/api.php/provide/vod/"
+  },
+  {
+    "key": "ikunzyapi.com",
+    "name": "ikun资源网",
+    "api": "https://ikunzyapi.com/api.php/provide/vod/"
   },
   {
     "key": "155api.com",
@@ -73,6 +83,11 @@
     "key": "api.ffzyapi.com",
     "name": "非凡资源网",
     "api": "http://api.ffzyapi.com/api.php/provide/vod/"
+  },
+  {
+    "key": "naixxzy.com",
+    "name": "奶香香资源站",
+    "api": "https://Naixxzy.com/api.php/provide/vod/"
   },
   {
     "key": "bfzyapi.com",
