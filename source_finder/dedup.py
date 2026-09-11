@@ -42,7 +42,9 @@ def to_tvbox_format(sources):
         result.append({
             'key': source['key'],
             'name': source['name'],
-            'api': source['api_url'].rstrip('/') + '/'
+            'api': source['api_url'].rstrip('/') + '/',
+            'latency_ms': source.get('latency_ms', 0),
+            'categories': source.get('categories', []),
         })
     return result
 
