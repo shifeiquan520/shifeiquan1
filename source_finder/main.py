@@ -55,18 +55,23 @@ def check_mobile_accessible(source):
     check_url = f"{api_url}?ac=list&pg=1"
 
     try:
+        start = time.time()
         resp = requests.get(check_url, headers=HEADERS, timeout=MOBILE_TIMEOUT, verify=False)
+        latency = int((time.time() - start) * 1000)
         if resp.status_code != 200:
             return False
         data = resp.json()
         video_list = data.get('list', [])
-        return len(video_list) > 0
+        if len(video_list) > 0:
+            source['latency_ms'] = latency
+            return True
+        return False
     except Exception:
         return False
 
 
 def filter_mobile_sources(sources):
-    """筛选移动网络可访问的源"""
+    """筛选移动网络可访问的源，按延迟排序"""
     accessible = []
     for i, source in enumerate(sources):
         name = source.get('name', '')
@@ -74,11 +79,13 @@ def filter_mobile_sources(sources):
         
         if check_mobile_accessible(source):
             accessible.append(source)
-            print("OK")
+            print(f"OK ({source.get('latency_ms', 0)}ms)")
         else:
             print("FAIL")
         
         time.sleep(0.5)
+    
+    accessible.sort(key=lambda x: x.get('latency_ms', 99999))
     return accessible
 
 
