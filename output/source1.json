@@ -1,157 +1,188 @@
 [
   {
-    "key": "cdn.dzzyapi.com",
-    "name": "大众",
-    "api": "https://cdn.dzzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "caiji.xgzyapi.com",
-    "name": "西瓜",
-    "api": "https://caiji.xgzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "caiji.maotaizy.cc",
-    "name": "影剧资源网",
-    "api": "https://caiji.maotaizy.cc/api.php/provide/vod/"
-  },
-  {
-    "key": "api.niuniuzy.me",
-    "name": "牛牛资源网",
-    "api": "https://api.niuniuzy.me/api.php/provide/vod/"
-  },
-  {
-    "key": "api.zuidapi.com",
-    "name": "最大资源网",
-    "api": "https://api.zuidapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "api.okzyw.net",
-    "name": "OK资源",
-    "api": "http://api.okzyw.net/api.php/provide/vod/"
-  },
-  {
     "key": "www.huyaapi.com",
     "name": "虎牙资源",
-    "api": "https://www.huyaapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "api.maoyanapi.top",
-    "name": "猫眼资源站",
-    "api": "https://api.maoyanapi.top/api.php/provide/vod/"
-  },
-  {
-    "key": "tyyszyapi.com",
-    "name": "天涯影视资源网",
-    "api": "https://tyyszyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "www.iqiyizyapi.com",
-    "name": "爱奇艺资源站",
-    "api": "https://www.iqiyizyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "caiji.dyttzyapi.com",
-    "name": "电影天堂",
-    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "caiji.dbzy5.com",
-    "name": "豆瓣资源",
-    "api": "https://caiji.dbzy5.com/api.php/provide/vod/"
-  },
-  {
-    "key": "cj.rycjapi.com",
-    "name": "如意资源网",
-    "api": "https://cj.rycjapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "api.wujinapi.me",
-    "name": "无尽资源网",
-    "api": "https://api.wujinapi.me/api.php/provide/vod/"
-  },
-  {
-    "key": "ikunzyapi.com",
-    "name": "ikun资源网",
-    "api": "https://ikunzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "155api.com",
-    "name": "155资源站",
-    "api": "https://155api.com/api.php/provide/vod/"
-  },
-  {
-    "key": "api.ffzyapi.com",
-    "name": "非凡资源网",
-    "api": "http://api.ffzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "naixxzy.com",
-    "name": "奶香香资源站",
-    "api": "https://Naixxzy.com/api.php/provide/vod/"
-  },
-  {
-    "key": "bfzyapi.com",
-    "name": "暴风资源网",
-    "api": "https://bfzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "jszyapi.com",
-    "name": "极速资源网",
-    "api": "https://jszyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "www.mdzyapi.com",
-    "name": "魔都动漫资源",
-    "api": "https://www.mdzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "hhzyapi.com",
-    "name": "豪华资源网",
-    "api": "https://hhzyapi.com/api.php/provide/vod/"
-  },
-  {
-    "key": "cj.yayazy.net",
-    "name": "鸭鸭（丫丫）资源网",
-    "api": "https://cj.yayazy.net/api.php/provide/vod/"
-  },
-  {
-    "key": "apiyutu.com",
-    "name": "玉兔",
-    "api": "https://apiyutu.com/api.php/provide/vod/"
+    "api": "https://www.huyaapi.com/api.php/provide/vod/",
+    "latency_ms": 41
   },
   {
     "key": "subocj.com",
     "name": "速播资源",
-    "api": "https://subocj.com/api.php/provide/vod/"
+    "api": "https://subocj.com/api.php/provide/vod/",
+    "latency_ms": 41
   },
   {
-    "key": "aosikazy.com",
-    "name": "奥斯卡资源",
-    "api": "https://aosikazy.com/api.php/provide/vod/"
-  },
-  {
-    "key": "slapibf.com",
-    "name": "森林资源网",
-    "api": "https://slapibf.com/api.php/provide/vod/"
-  },
-  {
-    "key": "cj.lziapi.com",
-    "name": "量子",
-    "api": "https://cj.lziapi.com/api.php/provide/vod/"
+    "key": "hhzyapi.com",
+    "name": "豪华资源网",
+    "api": "https://hhzyapi.com/api.php/provide/vod/",
+    "latency_ms": 43
   },
   {
     "key": "api.guangsuapi.com",
     "name": "光速资源站",
-    "api": "https://api.guangsuapi.com/api.php/provide/vod/"
+    "api": "https://api.guangsuapi.com/api.php/provide/vod/",
+    "latency_ms": 44
+  },
+  {
+    "key": "api.zuidapi.com",
+    "name": "最大资源网",
+    "api": "https://api.zuidapi.com/api.php/provide/vod/",
+    "latency_ms": 45
+  },
+  {
+    "key": "155api.com",
+    "name": "155资源站",
+    "api": "https://155api.com/api.php/provide/vod/",
+    "latency_ms": 46
+  },
+  {
+    "key": "jszyapi.com",
+    "name": "极速资源网",
+    "api": "https://jszyapi.com/api.php/provide/vod/",
+    "latency_ms": 47
+  },
+  {
+    "key": "caiji.dyttzyapi.com",
+    "name": "电影天堂",
+    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/",
+    "latency_ms": 66
+  },
+  {
+    "key": "api.wujinapi.me",
+    "name": "无尽资源网",
+    "api": "https://api.wujinapi.me/api.php/provide/vod/",
+    "latency_ms": 86
   },
   {
     "key": "api.ukuapi88.com",
     "name": "uku资源",
-    "api": "https://api.ukuapi88.com/api.php/provide/vod/"
+    "api": "https://api.ukuapi88.com/api.php/provide/vod/",
+    "latency_ms": 88
+  },
+  {
+    "key": "apiyutu.com",
+    "name": "玉兔",
+    "api": "https://apiyutu.com/api.php/provide/vod/",
+    "latency_ms": 94
+  },
+  {
+    "key": "naixxzy.com",
+    "name": "奶香香资源站",
+    "api": "https://Naixxzy.com/api.php/provide/vod/",
+    "latency_ms": 112
+  },
+  {
+    "key": "cj.yayazy.net",
+    "name": "鸭鸭（丫丫）资源网",
+    "api": "https://cj.yayazy.net/api.php/provide/vod/",
+    "latency_ms": 120
+  },
+  {
+    "key": "api.niuniuzy.me",
+    "name": "牛牛资源网",
+    "api": "https://api.niuniuzy.me/api.php/provide/vod/",
+    "latency_ms": 123
+  },
+  {
+    "key": "api.okzyw.net",
+    "name": "OK资源",
+    "api": "http://api.okzyw.net/api.php/provide/vod/",
+    "latency_ms": 137
+  },
+  {
+    "key": "cj.lziapi.com",
+    "name": "量子",
+    "api": "https://cj.lziapi.com/api.php/provide/vod/",
+    "latency_ms": 140
   },
   {
     "key": "www.hongniuzy2.com",
     "name": "红牛资源",
-    "api": "https://www.hongniuzy2.com/api.php/provide/vod/"
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+    "latency_ms": 142
+  },
+  {
+    "key": "tyyszyapi.com",
+    "name": "天涯影视资源网",
+    "api": "https://tyyszyapi.com/api.php/provide/vod/",
+    "latency_ms": 147
+  },
+  {
+    "key": "aosikazy.com",
+    "name": "奥斯卡资源",
+    "api": "https://aosikazy.com/api.php/provide/vod/",
+    "latency_ms": 150
+  },
+  {
+    "key": "slapibf.com",
+    "name": "森林资源网",
+    "api": "https://slapibf.com/api.php/provide/vod/",
+    "latency_ms": 187
+  },
+  {
+    "key": "ikunzyapi.com",
+    "name": "ikun资源网",
+    "api": "https://ikunzyapi.com/api.php/provide/vod/",
+    "latency_ms": 213
+  },
+  {
+    "key": "api.ffzyapi.com",
+    "name": "非凡资源网",
+    "api": "http://api.ffzyapi.com/api.php/provide/vod/",
+    "latency_ms": 220
+  },
+  {
+    "key": "bfzyapi.com",
+    "name": "暴风资源网",
+    "api": "https://bfzyapi.com/api.php/provide/vod/",
+    "latency_ms": 232
+  },
+  {
+    "key": "caiji.xgzyapi.com",
+    "name": "西瓜",
+    "api": "https://caiji.xgzyapi.com/api.php/provide/vod/",
+    "latency_ms": 237
+  },
+  {
+    "key": "cdn.dzzyapi.com",
+    "name": "大众",
+    "api": "https://cdn.dzzyapi.com/api.php/provide/vod/",
+    "latency_ms": 280
+  },
+  {
+    "key": "api.maoyanapi.top",
+    "name": "猫眼资源站",
+    "api": "https://api.maoyanapi.top/api.php/provide/vod/",
+    "latency_ms": 548
+  },
+  {
+    "key": "www.mdzyapi.com",
+    "name": "魔都动漫资源",
+    "api": "https://www.mdzyapi.com/api.php/provide/vod/",
+    "latency_ms": 624
+  },
+  {
+    "key": "www.iqiyizyapi.com",
+    "name": "爱奇艺资源站",
+    "api": "https://www.iqiyizyapi.com/api.php/provide/vod/",
+    "latency_ms": 711
+  },
+  {
+    "key": "caiji.dbzy5.com",
+    "name": "豆瓣资源",
+    "api": "https://caiji.dbzy5.com/api.php/provide/vod/",
+    "latency_ms": 806
+  },
+  {
+    "key": "cj.rycjapi.com",
+    "name": "如意资源网",
+    "api": "https://cj.rycjapi.com/api.php/provide/vod/",
+    "latency_ms": 833
+  },
+  {
+    "key": "caiji.maotaizy.cc",
+    "name": "影剧资源网",
+    "api": "https://caiji.maotaizy.cc/api.php/provide/vod/",
+    "latency_ms": 1070
   }
 ]
