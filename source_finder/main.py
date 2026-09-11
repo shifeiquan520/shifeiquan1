@@ -63,7 +63,7 @@ def clean_name(name):
 
 
 def is_adult_source(source):
-    """检测源是否为成人源"""
+    """检测源是否为成人源（用原始 sources，包含 categories）"""
     categories = source.get('categories', [])
     src_cats = set(categories)
     if src_cats & ADULT_CATEGORIES:
@@ -94,13 +94,14 @@ def main():
     print(f"\n[步骤 3/4] 存活检测（共 {len(sources)} 个源）...")
     sources = check_all(sources)
 
-    # 4. 去重 + 转换格式
+    # 4. 去重
     print(f"\n[步骤 4/4] 域名去重...")
     sources = dedup_sources(sources)
     if not sources:
         print("[ERR] 去重后无可用源，退出")
         return
 
+    # 转换为 TVBox 格式（不含 categories）
     tvbox_sources = to_tvbox_format(sources)
 
     # 清理名称
@@ -118,7 +119,13 @@ def main():
     print(f"[FILE] {OUTPUT_FILE}")
 
     # ---- 筛选非成人源 -> sources1.json（按延迟排序）----
-    non_adult = [s for s in tvbox_sources if not is_adult_source(s)]
+    # 用原始 sources（含 categories）做成人检测
+    non_adult = []
+    for s in tvbox_sources:
+        # 找到对应的原始 source（用 key 匹配）
+        original = next((src for src in sources if src.get('key') == s['key']), None)
+        if original and not is_adult_source(original):
+            non_adult.append(s)
     non_adult.sort(key=lambda x: x.get('latency_ms', 99999))
 
     with open(NON_ADULT_FILE, 'w', encoding='utf-8') as f:
@@ -128,7 +135,11 @@ def main():
     print(f"[FILE] {NON_ADULT_FILE}")
 
     # ---- 筛选成人源 -> sources18.json ----
-    adult = [s for s in tvbox_sources if is_adult_source(s)]
+    adult = []
+    for s in tvbox_sources:
+        original = next((src for src in sources if src.get('key') == s['key']), None)
+        if original and is_adult_source(original):
+            adult.append(s)
 
     with open(ADULT_FILE, 'w', encoding='utf-8') as f:
         json.dump(adult, f, ensure_ascii=False, indent=2)
