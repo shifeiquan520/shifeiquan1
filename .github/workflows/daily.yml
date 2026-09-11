@@ -23,6 +23,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r source_finder/requirements.txt
 
+      - name: Get mobile proxy
+        run: python source_finder/get_proxy.py
+
       - name: Run source finder
         run: python source_finder/main.py
 
@@ -30,6 +33,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add output/sources.json output/source1.json output/sources18.json
+          git add output/sources.json output/source1.json output/sources18.json output/yddl.json
           git diff --cached --quiet || git commit -m "auto: update sources.json, source1.json, sources18.json"
           git push
