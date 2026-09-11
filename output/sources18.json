@@ -3,24 +3,30 @@
     "key": "155api.com",
     "name": "155资源站",
     "api": "https://155api.com/api.php/provide/vod/",
-    "latency_ms": 161
+    "latency_ms": 915
+  },
+  {
+    "key": "naixxzy.com",
+    "name": "奶香香资源站",
+    "api": "https://Naixxzy.com/api.php/provide/vod/",
+    "latency_ms": 439
   },
   {
     "key": "apiyutu.com",
     "name": "玉兔",
     "api": "https://apiyutu.com/api.php/provide/vod/",
-    "latency_ms": 528
+    "latency_ms": 222
   },
   {
     "key": "aosikazy.com",
     "name": "奥斯卡资源",
     "api": "https://aosikazy.com/api.php/provide/vod/",
-    "latency_ms": 654
+    "latency_ms": 350
   },
   {
     "key": "slapibf.com",
     "name": "森林资源网",
     "api": "https://slapibf.com/api.php/provide/vod/",
-    "latency_ms": 423
+    "latency_ms": 342
   }
 ]
