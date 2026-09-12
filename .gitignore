@@ -2,9 +2,3 @@ __pycache__/
 *.pyc
 *.pyo
 .DS_Store
-/*.apk
-/*.jar
-/*.webp
-/*.html
-/11.json
-/贝壳观察记录表.html
