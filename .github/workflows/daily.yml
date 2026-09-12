@@ -1,0 +1,41 @@
+name: Daily Source Discovery
+
+on:
+  schedule:
+    - cron: '0 20 * * *'  # UTC 20:00 = 北京时间 04:00
+  workflow_dispatch:       # 允许手动触发
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-discover
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'source_finder/requirements.txt'
+
+      - name: Install dependencies
+        run: pip install -r source_finder/requirements.txt
+
+      - name: Run source finder
+        run: python source_finder/main.py
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/sources.json output/sources1.json output/sources18.json
+          git diff --cached --quiet || git commit -m "auto: update sources $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          git push
