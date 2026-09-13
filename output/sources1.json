@@ -1,158 +1,158 @@
 [
   {
-    "key": "bfzyapi.com",
-    "name": "暴风资源网",
-    "api": "https://bfzyapi.com/api.php/provide/vod/",
-    "latency_ms": 118
-  },
-  {
-    "key": "api.guangsuapi.com",
-    "name": "光速资源站",
-    "api": "https://api.guangsuapi.com/api.php/provide/vod/",
-    "latency_ms": 121
-  },
-  {
-    "key": "cdn.dzzyapi.com",
-    "name": "大众",
-    "api": "https://cdn.dzzyapi.com/api.php/provide/vod/",
-    "latency_ms": 131
+    "key": "api.wujinapi.me",
+    "name": "无尽资源网",
+    "api": "https://api.wujinapi.me/api.php/provide/vod/",
+    "latency_ms": 114
   },
   {
     "key": "api.ukuapi88.com",
     "name": "uku资源",
     "api": "https://api.ukuapi88.com/api.php/provide/vod/",
-    "latency_ms": 147
-  },
-  {
-    "key": "api.zuidapi.com",
-    "name": "最大资源网",
-    "api": "https://api.zuidapi.com/api.php/provide/vod/",
-    "latency_ms": 151
-  },
-  {
-    "key": "api.niuniuzy.me",
-    "name": "牛牛资源网",
-    "api": "https://api.niuniuzy.me/api.php/provide/vod/",
-    "latency_ms": 185
-  },
-  {
-    "key": "api.okzyw.net",
-    "name": "OK资源",
-    "api": "http://api.okzyw.net/api.php/provide/vod/",
-    "latency_ms": 185
-  },
-  {
-    "key": "cj.yayazy.net",
-    "name": "鸭鸭（丫丫）资源网",
-    "api": "https://cj.yayazy.net/api.php/provide/vod/",
-    "latency_ms": 190
-  },
-  {
-    "key": "api.wujinapi.me",
-    "name": "无尽资源网",
-    "api": "https://api.wujinapi.me/api.php/provide/vod/",
-    "latency_ms": 197
-  },
-  {
-    "key": "jszyapi.com",
-    "name": "极速资源网",
-    "api": "https://jszyapi.com/api.php/provide/vod/",
-    "latency_ms": 204
-  },
-  {
-    "key": "tyyszyapi.com",
-    "name": "天涯影视资源网",
-    "api": "https://tyyszyapi.com/api.php/provide/vod/",
-    "latency_ms": 220
+    "latency_ms": 137
   },
   {
     "key": "www.huyaapi.com",
     "name": "虎牙资源",
     "api": "https://www.huyaapi.com/api.php/provide/vod/",
-    "latency_ms": 254
+    "latency_ms": 140
   },
   {
-    "key": "www.hongniuzy2.com",
-    "name": "红牛资源",
-    "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
-    "latency_ms": 259
+    "key": "api.guangsuapi.com",
+    "name": "光速资源站",
+    "api": "https://api.guangsuapi.com/api.php/provide/vod/",
+    "latency_ms": 159
+  },
+  {
+    "key": "jszyapi.com",
+    "name": "极速资源网",
+    "api": "https://jszyapi.com/api.php/provide/vod/",
+    "latency_ms": 174
+  },
+  {
+    "key": "cdn.dzzyapi.com",
+    "name": "大众",
+    "api": "https://cdn.dzzyapi.com/api.php/provide/vod/",
+    "latency_ms": 175
+  },
+  {
+    "key": "api.okzyw.net",
+    "name": "OK资源",
+    "api": "http://api.okzyw.net/api.php/provide/vod/",
+    "latency_ms": 199
+  },
+  {
+    "key": "tyyszyapi.com",
+    "name": "天涯影视资源网",
+    "api": "https://tyyszyapi.com/api.php/provide/vod/",
+    "latency_ms": 243
   },
   {
     "key": "caiji.dyttzyapi.com",
     "name": "电影天堂",
     "api": "http://caiji.dyttzyapi.com/api.php/provide/vod/",
+    "latency_ms": 249
+  },
+  {
+    "key": "cj.yayazy.net",
+    "name": "鸭鸭（丫丫）资源网",
+    "api": "https://cj.yayazy.net/api.php/provide/vod/",
     "latency_ms": 265
   },
   {
-    "key": "cj.lziapi.com",
-    "name": "量子",
-    "api": "https://cj.lziapi.com/api.php/provide/vod/",
-    "latency_ms": 268
+    "key": "www.hongniuzy2.com",
+    "name": "红牛资源",
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+    "latency_ms": 281
   },
   {
     "key": "hhzyapi.com",
     "name": "豪华资源网",
     "api": "https://hhzyapi.com/api.php/provide/vod/",
-    "latency_ms": 341
+    "latency_ms": 284
   },
   {
-    "key": "www.mdzyapi.com",
-    "name": "魔都动漫资源",
-    "api": "https://www.mdzyapi.com/api.php/provide/vod/",
-    "latency_ms": 376
+    "key": "api.zuidapi.com",
+    "name": "最大资源网",
+    "api": "https://api.zuidapi.com/api.php/provide/vod/",
+    "latency_ms": 302
   },
   {
-    "key": "caiji.xgzyapi.com",
-    "name": "西瓜",
-    "api": "https://caiji.xgzyapi.com/api.php/provide/vod/",
-    "latency_ms": 387
+    "key": "cj.lziapi.com",
+    "name": "量子",
+    "api": "https://cj.lziapi.com/api.php/provide/vod/",
+    "latency_ms": 316
   },
   {
     "key": "ikunzyapi.com",
     "name": "ikun资源网",
     "api": "https://ikunzyapi.com/api.php/provide/vod/",
-    "latency_ms": 497
+    "latency_ms": 380
+  },
+  {
+    "key": "api.niuniuzy.me",
+    "name": "牛牛资源网",
+    "api": "https://api.niuniuzy.me/api.php/provide/vod/",
+    "latency_ms": 387
+  },
+  {
+    "key": "caiji.xgzyapi.com",
+    "name": "西瓜",
+    "api": "https://caiji.xgzyapi.com/api.php/provide/vod/",
+    "latency_ms": 432
   },
   {
     "key": "api.maoyanapi.top",
     "name": "猫眼资源站",
     "api": "https://api.maoyanapi.top/api.php/provide/vod/",
-    "latency_ms": 589
+    "latency_ms": 619
   },
   {
     "key": "subocj.com",
     "name": "速播资源",
     "api": "https://subocj.com/api.php/provide/vod/",
-    "latency_ms": 686
+    "latency_ms": 662
+  },
+  {
+    "key": "www.mdzyapi.com",
+    "name": "魔都动漫资源",
+    "api": "https://www.mdzyapi.com/api.php/provide/vod/",
+    "latency_ms": 677
   },
   {
     "key": "api.ffzyapi.com",
     "name": "非凡资源网",
     "api": "http://api.ffzyapi.com/api.php/provide/vod/",
-    "latency_ms": 776
+    "latency_ms": 1164
   },
   {
     "key": "caiji.dbzy5.com",
     "name": "豆瓣资源",
     "api": "https://caiji.dbzy5.com/api.php/provide/vod/",
-    "latency_ms": 1013
+    "latency_ms": 1196
+  },
+  {
+    "key": "bfzyapi.com",
+    "name": "暴风资源网",
+    "api": "https://bfzyapi.com/api.php/provide/vod/",
+    "latency_ms": 1250
   },
   {
     "key": "cj.rycjapi.com",
     "name": "如意资源网",
     "api": "https://cj.rycjapi.com/api.php/provide/vod/",
-    "latency_ms": 1318
-  },
-  {
-    "key": "caiji.maotaizy.cc",
-    "name": "影剧资源网",
-    "api": "https://caiji.maotaizy.cc/api.php/provide/vod/",
-    "latency_ms": 1405
+    "latency_ms": 1346
   },
   {
     "key": "www.iqiyizyapi.com",
     "name": "爱奇艺资源站",
     "api": "https://www.iqiyizyapi.com/api.php/provide/vod/",
-    "latency_ms": 3750
+    "latency_ms": 2043
+  },
+  {
+    "key": "caiji.maotaizy.cc",
+    "name": "影剧资源网",
+    "api": "https://caiji.maotaizy.cc/api.php/provide/vod/",
+    "latency_ms": 5094
   }
 ]
