@@ -3,18 +3,18 @@
     "key": "naixxzy.com",
     "name": "奶香香资源站",
     "api": "https://Naixxzy.com/api.php/provide/vod/",
-    "latency_ms": 554
+    "latency_ms": 566
   },
   {
     "key": "apiyutu.com",
     "name": "玉兔",
     "api": "https://apiyutu.com/api.php/provide/vod/",
-    "latency_ms": 214
+    "latency_ms": 195
   },
   {
     "key": "aosikazy.com",
     "name": "奥斯卡资源",
     "api": "https://aosikazy.com/api.php/provide/vod/",
-    "latency_ms": 381
+    "latency_ms": 237
   }
 ]
