@@ -3,30 +3,30 @@
     "key": "xyezy.com",
     "name": "星夜资源站",
     "api": "https://xyezy.com/api.php/provide/vod/",
-    "latency_ms": 578
+    "latency_ms": 530
   },
   {
     "key": "naixxzy.com",
     "name": "奶香香资源站",
     "api": "https://Naixxzy.com/api.php/provide/vod/",
-    "latency_ms": 482
+    "latency_ms": 662
   },
   {
     "key": "apiyutu.com",
     "name": "玉兔",
     "api": "https://apiyutu.com/api.php/provide/vod/",
-    "latency_ms": 217
+    "latency_ms": 232
   },
   {
     "key": "aosikazy.com",
     "name": "奥斯卡资源",
     "api": "https://aosikazy.com/api.php/provide/vod/",
-    "latency_ms": 949
+    "latency_ms": 918
   },
   {
     "key": "dadiapi.com",
     "name": "大地",
     "api": "https://dadiapi.com/api.php/provide/vod/",
-    "latency_ms": 962
+    "latency_ms": 1085
   }
 ]
